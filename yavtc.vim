@@ -26,7 +26,7 @@ let colors_name = "yavtc"
 " color09 #d70000 160 1   red             (matching brackets)
 " color10 #ddca7e 179 0   paleyellow      (keywords, booleans)
 " color11 #9a8297 139 0   palepurple      (property, functions names) 
-" color12 #809bbd 110  0   paleblue        (variables names)
+" color12 #809bbd 110 0   paleblue        (variables names)
 " color13 #a7925a 179 0   lightbrown      (xml tags)
 " color14 #d0782a 172 0   paleorange      (numbers)
 " color15 #96b38a 108 0   palegreen       (strings)
@@ -69,7 +69,7 @@ let s:gui12  = '#809bbd'
 let s:term12 = '110'
 
 let s:gui13  = '#a7925a'
-let s:term13 = '179'
+let s:term13 = '94'
 
 let s:gui14  = '#d0782a'
 let s:term14 = '172'
@@ -151,9 +151,6 @@ hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold ctermfg=254 cterm=bold
 hi Visual		guifg=#e4e4e4 guibg=#3a3a3a gui=none ctermfg=254 ctermbg=237
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none ctermfg=244 ctermbg=236
 
-hi Type 		guifg=#7e8aa2 gui=none ctermfg=103
-hi PreProc 		guifg=#faf4c6 gui=none ctermfg=230
-hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
 
 
 
@@ -171,6 +168,10 @@ exe 'hi cursor ' . s:fgnone . ' ' . s:bg5 . ' gui=none cterm=NONE'
 
 " Folded lines
 exe 'hi Folded ' . s:fg7 . ' ' . s:bg4 . ' gui=none cterm=NONE'
+
+" Todo - anything that needs extra attention. mostly keywords TODO FIXME and
+" XXX
+exe 'hi Todo ' . s:fg5 . ' ' . s:bg1 . ' gui=bold cterm=BOLD'
 
 """" Syntax highlighting
 " Normal text
@@ -196,27 +197,27 @@ exe 'hi Number ' . s:fg14 . ' gui=none cterm=NONE'
 exe 'hi Float ' . s:fg14 . ' gui=none cterm=NONE'
 
 " Booleans - booleans constants: true, True, TRUE
-exe 'hi Boolean ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Boolean ' . s:fg14 . ' gui=none cterm=NONE'
 
 
 " Identifier - any variable name
 exe 'hi Identifier ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Function - function name (also: methods or classes)
-exe 'hi Function ' . s:fg11 . ' gui=none cterm=NONE'
+exe 'hi Function ' . s:fg13 . ' gui=none cterm=NONE'
 
 
 " Statement - any statement
 exe 'hi Statement ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Conditional - if, then, else, endif, switch, etc.
-exe 'hi Conditional ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Conditional ' . s:fg13 . ' gui=none cterm=NONE'
 
 " Repeat - for, do, while, etc.
 exe 'hi Repeat ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Label - case, default, etc.
-exe 'hi Label ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Label ' . s:fg12 . ' gui=none cterm=NONE'
 
 " Exception - try, catch, throw
 exe 'hi Exception ' . s:fg10 . ' gui=none cterm=NONE'
@@ -237,10 +238,25 @@ exe 'hi Braces ' . s:fg6 . ' gui=none cterm=NONE'
 " Delimiter - character that needs attention
 " SpectialComment special things inside a comment
 " Debug - debugging statements
-exe 'hi Special ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Special ' . s:fg14 . ' gui=none cterm=NONE'
 
 " Error - any erroneous construct
-exe 'hi Error ' . s:fg9 .' '. s:bg2 . ' gui=none'
+exe 'hi Error ' . s:fg9 .' '. s:bgnone . ' gui=none'
+
+" PreProc - generic Preprocessor
+" Include - preprocessor #include
+" Define - preprocessor #define
+" Macro - same as define
+" PreCondit - preprocessor #if, #else, #endif, etc.
+exe 'hi PreProc ' . s:fg13 . ' gui=none cterm=NONE'
+
+" Type - int, long, char, etc.
+" StorageClass - static, register, volatile, etc.
+" Structure - struct, union, enum, etc.
+" Typedf - A typedef
+exe 'hi Type ' . s:fg10 . ' gui=none cterm=NONE'
+
+
 
 
 
@@ -249,4 +265,40 @@ exe 'hi Error ' . s:fg9 .' '. s:bg2 . ' gui=none'
 hi pythonOperator guifg=#cccccc gui=none ctermfg=252
 
 hi Search     guifg=white	guibg=NONE	cterm=NONE	gui=underline
+
+""" vim-javascript
+" Xml end tag
+exe 'hi xmlEndTag ' . s:fg13 . ' gui=none cterm=NONE'
+
+" jsNull statement
+exe 'hi jsNull ' . s:fg14 . ' gui=none cterm=NONE'
+
+" jsUndefined statement
+exe 'hi jsUndefined ' . s:fg14 . ' gui=none cterm=NONE'
+
+
+" jsArrowFunction
+exe 'hi jsArrowFunction ' . s:fg6 . ' gui=none cterm=NONE'
+
+" jsDotNotation
+exe 'hi jsDotNotation ' . s:fg6 . ' gui=none cterm=NONE'
+
+" jsObjectKey
+exe 'hi jsObjectKey ' . s:fg11 . ' gui=none cterm=NONE'
+
+" jsExportContainer
+exe 'hi jsExportContainer ' . s:fg12 . ' gui=none cterm=NONE'
+
+" jsFuncCall
+exe 'hi jsFuncCall ' . s:fg10 . ' gui=none cterm=NONE'
+
+" jsImportContainer
+exe 'hi jsImportContainer ' . s:fg12 . ' gui=none cterm=NONE'
+
+" jsTemplateVar
+exe 'hi jsTemplateVar ' . s:fg12 . ' gui=none cterm=NONE'
+
+
+
+
 
