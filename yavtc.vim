@@ -133,7 +133,7 @@ if version >= 700
   exe 'hi CursorColumn ' . s:bg3
 
   " Matching brackets
-  exe 'hi MatchParen ' . s:fg9 .' '. s:bg2 . ' gui=bold cterm=BOLD'
+  exe 'hi MatchParen ' . s:fg9 .' '. s:bg2 . ' gui=none cterm=NONE'
     
   " Pmenu from Mustang theme (untouched)
   hi Pmenu 		guifg=#ffffff guibg=#444444 ctermfg=255 ctermbg=238
@@ -204,14 +204,14 @@ exe 'hi Boolean ' . s:fg14 . ' gui=none cterm=NONE'
 exe 'hi Identifier ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Function - function name (also: methods or classes)
-exe 'hi Function ' . s:fg13 . ' gui=none cterm=NONE'
+exe 'hi Function ' . s:fg10 . ' gui=bold cterm=BOLD'
 
 
 " Statement - any statement
 exe 'hi Statement ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Conditional - if, then, else, endif, switch, etc.
-exe 'hi Conditional ' . s:fg13 . ' gui=none cterm=NONE'
+exe 'hi Conditional ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Repeat - for, do, while, etc.
 exe 'hi Repeat ' . s:fg10 . ' gui=none cterm=NONE'
@@ -236,7 +236,7 @@ exe 'hi Braces ' . s:fg6 . ' gui=none cterm=NONE'
 " SpecialChar - special char in constant
 " Tag - you can use CTRL-J on this
 " Delimiter - character that needs attention
-" SpectialComment special things inside a comment
+" SpecialComment special things inside a comment
 " Debug - debugging statements
 exe 'hi Special ' . s:fg14 . ' gui=none cterm=NONE'
 
@@ -270,6 +270,14 @@ hi Search     guifg=white	guibg=NONE	cterm=NONE	gui=underline
 " Xml end tag
 exe 'hi xmlEndTag ' . s:fg13 . ' gui=none cterm=NONE'
 
+" xmlTagName
+exe 'hi xmlTagName ' . s:fg13 . ' gui=none cterm=NONE'
+
+" xmlTag
+exe 'hi xmlTag ' . s:fg13 . ' gui=none cterm=NONE'
+
+
+
 " jsNull statement
 exe 'hi jsNull ' . s:fg14 . ' gui=none cterm=NONE'
 
@@ -299,6 +307,43 @@ exe 'hi jsImportContainer ' . s:fg12 . ' gui=none cterm=NONE'
 exe 'hi jsTemplateVar ' . s:fg12 . ' gui=none cterm=NONE'
 
 
+""" vim-css3
+" cssProp - css properties: display, content, text-align, etc.
+exe 'hi cssProp ' . s:fg11 . ' gui=none cterm=NONE'
+" cssMarginAttr - css margin keyword
+exe 'hi cssMarginAttr ' . s:fg11 . ' gui=none cterm=NONE'
+" cssPaddingAttr - css padding keyword
+exe 'hi cssPaddingAttr ' . s:fg11 . ' gui=none cterm=NONE'
+" cssBorderAttr
+exe 'hi cssBorderAttr ' . s:fg11 . ' gui=none cterm=NONE'
+
+" cssClassName - css class names: .my_class_name
+exe 'hi cssClassName ' . s:fg10 . ' gui=none cterm=NONE'
+
+" cssClassNameDot - css class names dot: "."my_class_name
+exe 'hi cssClassNameDot ' . s:fg14 . ' gui=none cterm=NONE'
+
+" cssBraces
+exe 'hi cssBraces ' . s:fg6 . ' gui=none cterm=NONE'
 
 
 
+" cssIdentifier - css id: #mon_id
+exe 'hi cssIdentifier ' . s:fg10 . ' gui=none cterm=NONE'
+
+" cssPseudoClassId
+exe 'hi cssPseudoClassId ' . s:fg13 . ' gui=none cterm=NONE'
+
+
+
+
+
+""" vim-less
+" lessVariable
+exe 'hi lessVariable ' . s:fg12 . ' gui=none cterm=NONE'
+
+" lessClass
+exe 'hi lessClass ' . s:fg10 . ' gui=none cterm=NONE'
+
+" lessNestedSelector
+exe 'hi lessNestedSelector ' . s:fg10 . ' gui=none cterm=NONE'
