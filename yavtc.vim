@@ -152,7 +152,12 @@ hi Visual		guifg=#e4e4e4 guibg=#3a3a3a gui=none ctermfg=254 ctermbg=237
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none ctermfg=244 ctermbg=236
 
 
-
+" mustang:
+" 148 green (Boolean, String, Identifier)
+" 255 pure white (Function)
+" 103 pale blue (Type statement, pythonOperator)
+" 208 orange (Keyword, Constant, Number, Special)
+" 230 very light yellow (PreProc)
 
 """""""" yavtc
 
@@ -181,56 +186,19 @@ exe 'hi Normal ' . s:fg7 . ' ' . s:bg1 . ' gui=none cterm=NONE'
 exe 'hi Comment ' . s:fg4 . ' gui=none cterm=NONE'
 
 
+
+""" Common syntax
+
+"" pale orange
+
 " Constant - any constant
-exe 'hi Constant ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Constant ' . s:fg14 . ' gui=none cterm=NONE'
 
-" Strings - string constant: "this is a string"
-exe 'hi String ' . s:fg15 . ' gui=none cterm=NONE'
-
-" Character - character constant: 'c', '\n'
-exe 'hi Character ' . s:fg15 . ' gui=none cterm=NONE'
+" Keyword - any othe keyword
+exe 'hi Keyword ' . s:fg14 . ' gui=none cterm=NONE'
 
 " Number - number constants: 234, 0xff
 exe 'hi Number ' . s:fg14 . ' gui=none cterm=NONE'
-
-" Float - floating point constants: 2.3e10
-exe 'hi Float ' . s:fg14 . ' gui=none cterm=NONE'
-
-" Booleans - booleans constants: true, True, TRUE
-exe 'hi Boolean ' . s:fg14 . ' gui=none cterm=NONE'
-
-
-" Identifier - any variable name
-exe 'hi Identifier ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Function - function name (also: methods or classes)
-exe 'hi Function ' . s:fg10 . ' gui=bold cterm=BOLD'
-
-
-" Statement - any statement
-exe 'hi Statement ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Conditional - if, then, else, endif, switch, etc.
-exe 'hi Conditional ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Repeat - for, do, while, etc.
-exe 'hi Repeat ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Label - case, default, etc.
-exe 'hi Label ' . s:fg12 . ' gui=none cterm=NONE'
-
-" Exception - try, catch, throw
-exe 'hi Exception ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Keyword - any othe keyword
-exe 'hi Keyword ' . s:fg10 . ' gui=none cterm=NONE'
-
-" Operator - Sizeof, +, *, / etc.
-exe 'hi Operator ' . s:fg6 . ' gui=none cterm=NONE'
-
-" Brackets and braces {}()[]
-syn match       Braces display '[{}()\[\]]'
-exe 'hi Braces ' . s:fg6 . ' gui=none cterm=NONE'
 
 " Special - any special symbol
 " SpecialChar - special char in constant
@@ -240,29 +208,70 @@ exe 'hi Braces ' . s:fg6 . ' gui=none cterm=NONE'
 " Debug - debugging statements
 exe 'hi Special ' . s:fg14 . ' gui=none cterm=NONE'
 
-" Error - any erroneous construct
-exe 'hi Error ' . s:fg9 .' '. s:bgnone . ' gui=none'
 
-" PreProc - generic Preprocessor
-" Include - preprocessor #include
-" Define - preprocessor #define
-" Macro - same as define
-" PreCondit - preprocessor #if, #else, #endif, etc.
-exe 'hi PreProc ' . s:fg13 . ' gui=none cterm=NONE'
+
+
+"" pale green
+
+" Booleans - booleans constants: true, True, TRUE
+exe 'hi Boolean ' . s:fg15 . ' gui=none cterm=NONE'
+
+" Strings - string constant: "this is a string"
+exe 'hi String ' . s:fg15 . ' gui=none cterm=NONE'
+
+" Identifier - any variable name
+exe 'hi Identifier ' . s:fg15 . ' gui=none cterm=NONE'
+
+
+
+"" pure white
+
+" Function - function name (also: methods or classes)
+exe 'hi Function ' . s:fg8 . ' gui=none cterm=NONE'
+
+
+"" pale blue
+" Statement - any statement
+exe 'hi Statement ' . s:fg12 . ' gui=none cterm=NONE'
 
 " Type - int, long, char, etc.
 " StorageClass - static, register, volatile, etc.
 " Structure - struct, union, enum, etc.
 " Typedf - A typedef
-exe 'hi Type ' . s:fg10 . ' gui=none cterm=NONE'
+exe 'hi Type ' . s:fg12 . ' gui=none cterm=NONE'
+
+
+"" light yellow
+" PreProc - generic Preprocessor
+" Include - preprocessor #include
+" Define - preprocessor #define
+" Macro - same as define
+" PreCondit - preprocessor #if, #else, #endif, etc.
+exe 'hi PreProc ' . s:fg10 . ' gui=none cterm=NONE'
 
 
 
 
+
+
+" Operator - Sizeof, +, *, / etc.
+exe 'hi Operator ' . s:fg6 . ' gui=none cterm=NONE'
+
+" Brackets and braces {}()[]
+syn match       Braces display '[{}()\[\]]'
+exe 'hi Braces ' . s:fg6 . ' gui=none cterm=NONE'
+
+" Error - any erroneous construct
+exe 'hi Error ' . s:fg9 .' '. s:bgnone . ' gui=none'
 
 
 " Code-specific colors
-hi pythonOperator guifg=#cccccc gui=none ctermfg=252
+
+
+""" Python
+exe 'hi pythonOperator ' . s:fg12 . ' gui=none cterm=NONE'
+
+
 
 hi Search     guifg=white	guibg=NONE	cterm=NONE	gui=underline
 
