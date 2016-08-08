@@ -230,18 +230,17 @@ exe 'hi Identifier ' . s:fg15 . ' gui=none cterm=NONE'
 exe 'hi Function ' . s:fg8 . ' gui=none cterm=NONE'
 
 
-"" pale blue
+"" light yellow
 " Statement - any statement
-exe 'hi Statement ' . s:fg12 . ' gui=none cterm=NONE'
+exe 'hi Statement ' . s:fg10 . ' gui=none cterm=NONE'
 
 " Type - int, long, char, etc.
 " StorageClass - static, register, volatile, etc.
 " Structure - struct, union, enum, etc.
 " Typedf - A typedef
-exe 'hi Type ' . s:fg12 . ' gui=none cterm=NONE'
+exe 'hi Type ' . s:fg10 . ' gui=none cterm=NONE'
 
 
-"" light yellow
 " PreProc - generic Preprocessor
 " Include - preprocessor #include
 " Define - preprocessor #define
@@ -269,7 +268,9 @@ exe 'hi Error ' . s:fg9 .' '. s:bgnone . ' gui=none'
 
 
 """ Python
-exe 'hi pythonOperator ' . s:fg12 . ' gui=none cterm=NONE'
+
+" pale purple
+exe 'hi pythonOperator ' . s:fg11 . ' gui=none cterm=NONE'
 
 
 
